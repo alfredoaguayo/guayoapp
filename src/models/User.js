@@ -16,9 +16,6 @@ UserSchema.methods.encryptPassword = async (password) => {
 };
 
 UserSchema.methods.matchPassword = async function (password) {
-    console.log(`Llegue a Models`);
-//    console.log(`Este es el pass en models ${password}`);
-//    console.log(bcrypt.compare(password, this.password));
 return await bcrypt.compare(password, this.password);
 }
 

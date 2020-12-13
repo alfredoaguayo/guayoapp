@@ -9,6 +9,7 @@
   "author": "Alfredo Aguayo López",
   "license": "MIT",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "ejs": "^3.1.5",

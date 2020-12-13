@@ -8,13 +8,14 @@ const User = require('../models/User');
  }, async (email, password, done) => {
      const user = await User.findOne({email: email});
      if(!user) {
-         return done(null, false, { message: 'Usuario no encontrado'});
+         console.log(`El correo ${email} no se encuentra registrado.`)
+         return done(null, false, { message: 'La información proporcionada no es correcta.'});
      } else {
          const match = await user.matchPassword(password);
          if(match) {
              return done(null, user)
          } else {
-             return done(null, false, {message: 'Contraseña incorrecta'});
+             return done(null, false, {message: 'La información proporcionada no es correcta. Contacte a soporte.'});
          }
      }
  }));
